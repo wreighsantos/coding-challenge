@@ -26,7 +26,7 @@ class Palindrome:
 
         longest_palindrome = ""
 
-        while start < end:
+        while start <= end:
             moving_start = start
             moving_end = end
 

@@ -7,6 +7,7 @@ long_input_strings = [
     ('nolemonnomelon aaaaaaaaaaaaabaaaaaaaaaaaa', 'aaaaaaaaaaaabaaaaaaaaaaaa'),
     ('njsnjj asd xxx nurses run xx aa nolemon no melon aaa xxx zz', 'aanolemonnomelonaa'),
     ('racecar mom maskd jammaj nxczb askmeemksa', 'askmeemksa'),
+    ('abcdefghijklmnoqrstuvwxyz', 'a'),
 ]
 
 full_palindrome_inputs = [
@@ -47,6 +48,6 @@ class LongestPalindromicStringTest(unittest.TestCase):
 
     def test_get_longest_palindromic_string_on_non_palindromic_two_characters(self):
         input = "ab"
-        expected = ""
+        expected = "a"
         result = self.palindrome.get_longest_palindromic_string(input)
         self.assertEqual(result, expected)
