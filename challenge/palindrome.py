@@ -19,14 +19,6 @@ class Palindrome:
     def get_longest_palindromic_string(self, text):
         """Get the longest palindromic string in a string"""
         text = self.validate_input(text)
-        _, longest_palindrome = self._extract_palindromes(text)
-        return longest_palindrome
-
-    def _extract_palindromes(self, text):
-        """
-        Extracts all palindromes from a string.
-        Also returns the first longest palindromic string found.
-        """
         text_length = len(text)
 
         start = 0
@@ -34,7 +26,6 @@ class Palindrome:
         previous_start = -1
         previous_end = -1
 
-        palindromes = []
         longest_palindrome = ""
 
         while start <= end:
@@ -43,7 +34,7 @@ class Palindrome:
 
             while moving_end >= moving_start:
                 # we're probably navigating inside the previously added palindrome
-                if moving_start > previous_start and moving_end < previous_end:
+                if start > previous_start and end < previous_end:
                     break
 
                 if text[moving_start] == text[moving_end]:
@@ -54,17 +45,17 @@ class Palindrome:
                     end -= 1
                     moving_end = end
 
-            if not (moving_start > previous_start and moving_end < previous_end):
-                palindromes.append(text[start:end + 1])
-                if len(longest_palindrome) < len(palindromes[-1]):
-                    longest_palindrome = palindromes[-1]
+            if not (start > previous_start and end < previous_end):
+                current_palindrome = text[start:end + 1]
+                if len(longest_palindrome) < len(current_palindrome):
+                    longest_palindrome = current_palindrome
                 previous_start = start
                 previous_end = end
 
             start += 1
             end = text_length - 1
 
-        return palindromes, longest_palindrome
+        return longest_palindrome
 
     def validate_input(self, input):
         """Validate input for palindrome actions."""
