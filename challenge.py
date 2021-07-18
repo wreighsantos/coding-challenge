@@ -1,5 +1,5 @@
 import sys
-from palindrome import Palindrome
+from challenge.palindrome import Palindrome
 
 def main():
     input_action = sys.argv[1]
@@ -16,14 +16,16 @@ def main():
         )
     elif input_action == "-level2":
         print(
-            "Longest Palindrome: {}".format(
+            "Longest palindrome: {}".format(
                 palindrome.get_longest_palindromic_string(input_string)
             )
         )
     elif input_action == "-level3":
-        raise NotImplementedError
+        splitted, count = palindrome.get_min_splits_on_string(input_string)
+        print(splitted)
+        print(count)
     else:
-        raise ValueError("Invalid action")
+        raise NotImplementedError
 
 if __name__ == "__main__":
     main()
