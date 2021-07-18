@@ -10,6 +10,7 @@ input_strings = [
     ('racecara', 'racecar|a', 1),
     ('aracecar', 'a|racecar', 1),
     ('caracecar', 'c|a|racecar', 2),
+    ('abaracecar', 'aba|racecar', 2),
     ('abaaracecar', 'aba|a|racecar', 2),
 ]
 
