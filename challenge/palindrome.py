@@ -34,7 +34,7 @@ class Palindrome:
 
             while moving_end >= moving_start:
                 # we're probably navigating inside the previously added palindrome
-                if start > previous_start and end < previous_end:
+                if start > previous_start and end <= previous_end:
                     break
 
                 if text[moving_start] == text[moving_end]:
@@ -45,7 +45,7 @@ class Palindrome:
                     end -= 1
                     moving_end = end
 
-            if not (start > previous_start and end < previous_end):
+            if not (start > previous_start and end <= previous_end):
                 current_palindrome = text[start:end + 1]
                 if len(longest_palindrome) < len(current_palindrome):
                     longest_palindrome = current_palindrome
