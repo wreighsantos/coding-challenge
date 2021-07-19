@@ -13,7 +13,7 @@
 `python3 -m unittest tests/<test_suite>.py`
 
 **Running all unit tests**
-`python3 -m unittest /tests -p "*.py"`
+`python3 -m unittest discover tests -p "*.py"`
 
 ---
 
